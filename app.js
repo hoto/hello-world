@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000
 const NODE_ENV = process.env.NODE_ENV
 
 app.use((req, res, next) => {
-  console.log('Got request...')
+  console.log('Got request... url: ',req.url)
   next()
 })
 
