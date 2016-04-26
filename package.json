@@ -1,0 +1,22 @@
+{
+  "name": "hoto.hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoto/hello-world.git"
+  },
+  "author": "Andrzej Rehmann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoto/hello-world/issues"
+  },
+  "homepage": "https://github.com/hoto/hello-world#readme",
+  "dependencies": {
+    "express": "4.13.4"
+  }
+}
