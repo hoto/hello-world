@@ -10,12 +10,22 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/', (req, res) => res.json({
-    hostname: HOSTNAME,
+app.get('/', (req, res) => res.json(prepareResponse(req)))
+app.get('/test', (req, res) => res.json(prepareResponse(req)))
+
+app.listen(PORT, console.log(`Listening on port ${PORT}, hostname ${HOSTNAME}, current time: `, new Date()))
+
+function prepareResponse(req) {
+  return {
     nodeEnv: NODE_ENV,
+    hostname: HOSTNAME,
     date: new Date(),
     repo: 'hoto/hello-world',
-    type: 'docker'
-}))
-
-app.listen(PORT, console.log(`Listening on port ${PORT}, current time: `, new Date()))
+    type: 'docker',
+    protocol: req.protocol,
+    reqHost: req.get('host'),
+    reqUrl: req.url,
+    reqOriginalUrl: req.originalUrl,
+    fullUrl: req.protocol + '://' + req.get('host') + req.originalUrl
+  }
+}
