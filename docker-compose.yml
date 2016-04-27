@@ -1,0 +1,16 @@
+version: '2'
+
+services: 
+  node-app:
+    build: .
+    expose:
+    - "3000"
+    ports:
+    - "3000:3000"
+  nginx:
+    build: nginx:1.8.1
+    ports: 
+    - "80:80"
+    - "443:80"
+    links:
+      - node-app
