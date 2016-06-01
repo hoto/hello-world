@@ -3,14 +3,7 @@ version: '2'
 services:
   node-app:
     build: .
-    expose:
-    - "3000"
+    image: hoto/hello-world
     ports:
     - "3000:3000"
-  nginx:
-    image: nginx:1.8.1
-    ports: 
-    - "80:80"
-    - "443:80"
-    links:
-      - node-app
+    - "80:3000"
