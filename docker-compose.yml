@@ -3,7 +3,7 @@ version: '2'
 services:
   node-app:
     build: .
-    image: hoto/hello-world:2.0.0
+    image: hoto/hello-world:latest
     ports:
     - "3000:3000"
     - "80:3000"
