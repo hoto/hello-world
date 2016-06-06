@@ -1,0 +1,11 @@
+branch-defaults:
+  aws-eb-testing:
+    environment: testing-environment
+    group_suffix: null
+global:
+  application_name: rehmann-hello-world
+  default_ec2_keyname: andrzej-rehmann-moto-private
+  default_platform: Multi-container Docker 1.9.1 (Generic)
+  default_region: us-east-1
+  profile: null
+  sc: git
