@@ -1,6 +1,6 @@
 branch-defaults:
   aws-eb-testing:
-    environment: testing-environment
+    environment: aws-eb-testing
     group_suffix: null
 global:
   application_name: rehmann-hello-world
