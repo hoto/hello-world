@@ -17,15 +17,14 @@ app.listen(PORT, console.log(`Listening on port ${PORT}, hostname ${HOSTNAME}, c
 
 function prepareResponse(req) {
   return {
-    nodeEnv: NODE_ENV,
-    hostname: HOSTNAME,
+    NODE_ENV,
+    HOSTNAME,
     date: new Date(),
     repo: 'hoto/hello-world',
-    type: 'docker',
+    fullUrl: req.protocol + '://' + req.get('host') + req.originalUrl,
     protocol: req.protocol,
     reqHost: req.get('host'),
-    reqUrl: req.url,
     reqOriginalUrl: req.originalUrl,
-    fullUrl: req.protocol + '://' + req.get('host') + req.originalUrl
+    reqUrl: req.url
   }
 }

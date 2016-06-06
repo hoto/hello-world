@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  node-app:
+    build: .
+    environment:
+      NODE_ENV: test
