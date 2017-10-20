@@ -2,8 +2,25 @@ version: '3.1'
 
 services:
   node-app:
-    image: hoto/hello-world:latest
+    image: docker.io/hoto/hello-world:latest
     ports:
-    - 3000:3000
+      - 3000:3000
+    volumes:
+      - myvol:/tmp/mysite:Z
     environment:
       NODE_ENV: prod
+    deploy:
+       replicas: 64
+       update_config:
+         parallelism: 20
+         delay: 1s
+         failure_action: rollback
+       restart_policy:
+         condition: on-failure
+         delay: 10s
+         max_attempts: 3
+         window: 120s
+
+volumes:
+  myvol:
+  

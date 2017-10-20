@@ -1,4 +1,6 @@
-FROM mhart/alpine-node:5.10.1
+FROM docker.io/node:8-slim
+
+RUN mkdir -p /tmp/mysite/
 
 WORKDIR /src
 ADD package.json .
