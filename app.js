@@ -12,6 +12,7 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => res.json(prepareResponse(req)))
 app.get('/test', (req, res) => res.json(prepareResponse(req)))
+app.get('/health', (req, res) => res.json(prepareHealthResponse(req)))
 
 app.listen(PORT, console.log(`Listening on port ${PORT}, hostname ${HOSTNAME}, current time: `, new Date()))
 
@@ -26,5 +27,11 @@ function prepareResponse(req) {
     reqHost: req.get('host'),
     reqOriginalUrl: req.originalUrl,
     reqUrl: req.url
+  }
+}
+
+function prepareHealthResponse(req) {
+  return {
+    status: "UP"
   }
 }
