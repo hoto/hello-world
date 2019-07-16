@@ -3,7 +3,7 @@
 * Run Docker from Hub
         
         docker pull hoto/hello-world:latest
-        docker run -p 3000:3000 hoto/hello-world
+        docker run -p 8080:8080 hoto/hello-world
 
 * Run Docker from source
 
@@ -17,7 +17,7 @@
 
 * Open browser
 
-        localhost:3000
-        localhost:3000/test
+        localhost:8080
+        localhost:8080/test
 
         test
